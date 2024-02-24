@@ -1,0 +1,36 @@
+-- when you want to drop tables
+DROP TABLE solved_probrems;
+DROP TABLE users;
+DROP TABLE probrems;
+
+
+-- dbname: acdeer
+
+CREATE TABLE users (
+    atcoder_id CHAR(16) PRIMARY KEY,
+    discord_id NUMERIC(64) UNIQUE NOT NULL,
+    rating NUMERIC(4) NOT NULL
+);
+
+CREATE TABLE probrems (
+    id  CHAR(64) PRIMARY KEY,
+    name TEXT NOT NULL,
+    difficulty NUMERIC(4),
+    is_experimental TINYINT(1),
+    url TEXT NOT NULL
+);
+
+CREATE TABLE solved_probrems (
+    atcoder_id CHAR(16),
+    probrem_id CHAR(64),
+    timestamp DATETIME NOT NULL,
+
+    PRIMARY KEY (atcoder_id, probrem_id),
+    FOREIGN KEY (atcoder_id) REFERENCES users(atcoder_id)
+        ON UPDATE CASCADE ON DELETE CASCADE,
+    FOREIGN KEY (probrem_id) REFERENCES probrems(id)
+);
+
+
+CREATE INDEX idx_discord_id ON users(discord_id);
+CREATE INDEX idx_difficulty ON probrems(difficulty);

@@ -1,0 +1,424 @@
+WARNING    - 2023-10-06 17:36:03,494 - client          : PyNaCl is not installed, voice will NOT be supported
+INFO       - 2023-10-06 17:36:03,495 - client          : logging in using static token
+INFO       - 2023-10-06 17:36:04,938 - gateway         : Shard ID None has connected to Gateway (Session ID: 42152e7bd00757c24f7b6c45a13e475e).
+ERROR      - 2023-10-06 17:36:17,938 - tree            : Ignoring exception in command 'register'
+Traceback (most recent call last):
+  File "/home/loop/bot/main.py", line 30, in register
+    await db.set_user(
+  File "/home/loop/bot/db/db.py", line 46, in set_user
+    raise err
+  File "/home/loop/bot/db/db.py", line 34, in set_user
+    await cur.execute(stmt, {
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/aiomysql/cursors.py", line 239, in execute
+    await self._query(query)
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/aiomysql/cursors.py", line 457, in _query
+    await conn.query(q)
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/aiomysql/connection.py", line 469, in query
+    await self._read_query_result(unbuffered=unbuffered)
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/aiomysql/connection.py", line 683, in _read_query_result
+    await result.read()
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/aiomysql/connection.py", line 1164, in read
+    first_packet = await self.connection._read_packet()
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/aiomysql/connection.py", line 652, in _read_packet
+    packet.raise_for_error()
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1062, "Duplicate entry '193972793128386560' for key 'users.PRIMARY'")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/discord/app_commands/commands.py", line 828, in _do_call
+    return await self._callback(interaction, **params)  # type: ignore
+  File "/home/loop/bot/main.py", line 41, in register
+    if err[0] == 1062: # Duplicate entry
+TypeError: 'IntegrityError' object is not subscriptable
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/discord/app_commands/tree.py", line 1248, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/discord/app_commands/commands.py", line 853, in _invoke_with_namespace
+    return await self._do_call(interaction, transformed_values)
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/discord/app_commands/commands.py", line 842, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'register' raised an exception: TypeError: 'IntegrityError' object is not subscriptable
+WARNING    - 2023-10-06 17:37:36,602 - client          : PyNaCl is not installed, voice will NOT be supported
+INFO       - 2023-10-06 17:37:36,603 - client          : logging in using static token
+INFO       - 2023-10-06 17:37:38,012 - gateway         : Shard ID None has connected to Gateway (Session ID: 3402e871f532efebcc4ecacaa2102cb8).
+ERROR      - 2023-10-06 17:37:48,265 - tree            : Ignoring exception in command 'register'
+Traceback (most recent call last):
+  File "/home/loop/bot/main.py", line 30, in register
+    await db.set_user(
+  File "/home/loop/bot/db/db.py", line 33, in set_user
+    await cur.execute(stmt, {
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/aiomysql/cursors.py", line 239, in execute
+    await self._query(query)
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/aiomysql/cursors.py", line 457, in _query
+    await conn.query(q)
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/aiomysql/connection.py", line 469, in query
+    await self._read_query_result(unbuffered=unbuffered)
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/aiomysql/connection.py", line 683, in _read_query_result
+    await result.read()
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/aiomysql/connection.py", line 1164, in read
+    first_packet = await self.connection._read_packet()
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/aiomysql/connection.py", line 652, in _read_packet
+    packet.raise_for_error()
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1062, "Duplicate entry '193972793128386560' for key 'users.PRIMARY'")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/discord/app_commands/commands.py", line 828, in _do_call
+    return await self._callback(interaction, **params)  # type: ignore
+  File "/home/loop/bot/main.py", line 41, in register
+    if err[0] == 1062: # Duplicate entry
+TypeError: 'IntegrityError' object is not subscriptable
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/discord/app_commands/tree.py", line 1248, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/discord/app_commands/commands.py", line 853, in _invoke_with_namespace
+    return await self._do_call(interaction, transformed_values)
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/discord/app_commands/commands.py", line 842, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'register' raised an exception: TypeError: 'IntegrityError' object is not subscriptable
+WARNING    - 2023-10-06 17:39:40,905 - client          : PyNaCl is not installed, voice will NOT be supported
+INFO       - 2023-10-06 17:39:40,906 - client          : logging in using static token
+INFO       - 2023-10-06 17:39:42,526 - gateway         : Shard ID None has connected to Gateway (Session ID: def93bcbf280b4b4018e1776c89470a7).
+WARNING    - 2023-10-06 17:44:07,457 - client          : PyNaCl is not installed, voice will NOT be supported
+INFO       - 2023-10-06 17:44:07,458 - client          : logging in using static token
+INFO       - 2023-10-06 17:44:09,001 - gateway         : Shard ID None has connected to Gateway (Session ID: d3b607de9dce992405446031a8a063ff).
+WARNING    - 2023-10-06 20:51:43,592 - client          : PyNaCl is not installed, voice will NOT be supported
+INFO       - 2023-10-06 20:51:43,594 - client          : logging in using static token
+INFO       - 2023-10-06 20:51:45,487 - gateway         : Shard ID None has connected to Gateway (Session ID: e3211cdbfae3f056abe64899bfb23850).
+WARNING    - 2023-10-06 20:54:30,550 - client          : PyNaCl is not installed, voice will NOT be supported
+INFO       - 2023-10-06 20:54:30,551 - client          : logging in using static token
+INFO       - 2023-10-06 20:54:32,029 - gateway         : Shard ID None has connected to Gateway (Session ID: b7bf2e5165070e1cdfa8d93db214f1d0).
+ERROR      - 2023-10-06 20:54:39,158 - tree            : Ignoring exception in command 'register'
+Traceback (most recent call last):
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/discord/app_commands/commands.py", line 828, in _do_call
+    return await self._callback(interaction, **params)  # type: ignore
+  File "/home/loop/bot/main.py", line 30, in register
+    if await db.is_existing_user(conn, interaction.user.id):
+  File "/home/loop/bot/db/db.py", line 57, in is_existing_user
+    is_exist = True if await cur.fetchone() >= 1 else False
+TypeError: '>=' not supported between instances of 'tuple' and 'int'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/discord/app_commands/tree.py", line 1248, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/discord/app_commands/commands.py", line 853, in _invoke_with_namespace
+    return await self._do_call(interaction, transformed_values)
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/discord/app_commands/commands.py", line 842, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'register' raised an exception: TypeError: '>=' not supported between instances of 'tuple' and 'int'
+WARNING    - 2023-10-06 21:02:19,675 - client          : PyNaCl is not installed, voice will NOT be supported
+INFO       - 2023-10-06 21:02:19,675 - client          : logging in using static token
+INFO       - 2023-10-06 21:02:21,240 - gateway         : Shard ID None has connected to Gateway (Session ID: 56bcc17e992bb87d187434500ad91357).
+WARNING    - 2023-10-06 21:04:12,375 - client          : PyNaCl is not installed, voice will NOT be supported
+INFO       - 2023-10-06 21:04:12,376 - client          : logging in using static token
+INFO       - 2023-10-06 21:04:13,988 - gateway         : Shard ID None has connected to Gateway (Session ID: 0b65fef11d9701d71c5558fbb2f6b0ef).
+ERROR      - 2023-10-06 21:04:21,503 - tree            : Ignoring exception in command 'register'
+Traceback (most recent call last):
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/discord/app_commands/commands.py", line 828, in _do_call
+    return await self._callback(interaction, **params)  # type: ignore
+  File "/home/loop/bot/main.py", line 30, in register
+    existing_atcoder_id = await db.fetch_atcoder_id(conn, interaction.user.id)
+  File "/home/loop/bot/db/db.py", line 57, in fetch_atcoder_id
+    atcoder_id = await cur.fetchone()[0]
+TypeError: '_asyncio.Future' object is not subscriptable
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/discord/app_commands/tree.py", line 1248, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/discord/app_commands/commands.py", line 853, in _invoke_with_namespace
+    return await self._do_call(interaction, transformed_values)
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/discord/app_commands/commands.py", line 842, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'register' raised an exception: TypeError: '_asyncio.Future' object is not subscriptable
+WARNING    - 2023-10-06 21:05:10,916 - client          : PyNaCl is not installed, voice will NOT be supported
+INFO       - 2023-10-06 21:05:10,917 - client          : logging in using static token
+INFO       - 2023-10-06 21:05:12,662 - gateway         : Shard ID None has connected to Gateway (Session ID: 8e556c67c576119a1dcf55017f5de7ca).
+WARNING    - 2023-10-06 21:07:34,272 - client          : PyNaCl is not installed, voice will NOT be supported
+INFO       - 2023-10-06 21:07:34,273 - client          : logging in using static token
+INFO       - 2023-10-06 21:07:35,916 - gateway         : Shard ID None has connected to Gateway (Session ID: 2e1e6897b29996b685c9d2b3f6949f09).
+WARNING    - 2023-10-06 21:08:36,078 - client          : PyNaCl is not installed, voice will NOT be supported
+INFO       - 2023-10-06 21:08:36,079 - client          : logging in using static token
+INFO       - 2023-10-06 21:08:37,553 - gateway         : Shard ID None has connected to Gateway (Session ID: 4cbb4981b6bb63fbb5a68d4cd6977499).
+WARNING    - 2023-10-06 21:10:38,829 - client          : PyNaCl is not installed, voice will NOT be supported
+INFO       - 2023-10-06 21:10:38,830 - client          : logging in using static token
+INFO       - 2023-10-06 21:10:40,849 - gateway         : Shard ID None has connected to Gateway (Session ID: 43de2bd149c79ab05000b7f007a3ff69).
+WARNING    - 2023-10-07 00:11:38,349 - client          : PyNaCl is not installed, voice will NOT be supported
+INFO       - 2023-10-07 00:11:38,351 - client          : logging in using static token
+INFO       - 2023-10-07 00:11:40,017 - gateway         : Shard ID None has connected to Gateway (Session ID: 979196b085f2038157a9aaaefc978677).
+ERROR      - 2023-10-07 00:12:01,806 - tree            : Ignoring exception in command 'register'
+Traceback (most recent call last):
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/discord/app_commands/commands.py", line 828, in _do_call
+    return await self._callback(interaction, **params)  # type: ignore
+  File "/home/loop/bot/main.py", line 39, in register
+    async with db.create_server_connection() as conn:
+AttributeError: __aenter__
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/discord/app_commands/tree.py", line 1248, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/discord/app_commands/commands.py", line 853, in _invoke_with_namespace
+    return await self._do_call(interaction, transformed_values)
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/discord/app_commands/commands.py", line 846, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'register' raised an exception: AttributeError: __aenter__
+WARNING    - 2023-10-07 00:13:43,112 - client          : PyNaCl is not installed, voice will NOT be supported
+INFO       - 2023-10-07 00:13:43,112 - client          : logging in using static token
+INFO       - 2023-10-07 00:13:44,574 - gateway         : Shard ID None has connected to Gateway (Session ID: f46fed3fd171eed07fd029b176d3d7b7).
+ERROR      - 2023-10-07 00:13:51,866 - tree            : Ignoring exception in command 'register'
+Traceback (most recent call last):
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/discord/app_commands/commands.py", line 828, in _do_call
+    return await self._callback(interaction, **params)  # type: ignore
+  File "/home/loop/bot/main.py", line 39, in register
+    async with db.create_server_connection() as conn:
+AttributeError: __aenter__
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/discord/app_commands/tree.py", line 1248, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/discord/app_commands/commands.py", line 853, in _invoke_with_namespace
+    return await self._do_call(interaction, transformed_values)
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/discord/app_commands/commands.py", line 846, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'register' raised an exception: AttributeError: __aenter__
+WARNING    - 2023-10-07 00:14:32,743 - client          : PyNaCl is not installed, voice will NOT be supported
+INFO       - 2023-10-07 00:14:32,744 - client          : logging in using static token
+INFO       - 2023-10-07 00:14:34,270 - gateway         : Shard ID None has connected to Gateway (Session ID: 34ec0e37fdd7cfd6cab071b08c07c0b2).
+ERROR      - 2023-10-07 00:14:46,122 - tree            : Ignoring exception in command 'register'
+Traceback (most recent call last):
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/discord/app_commands/commands.py", line 828, in _do_call
+    return await self._callback(interaction, **params)  # type: ignore
+  File "/home/loop/bot/main.py", line 39, in register
+    async with db.create_server_connection() as conn:
+AttributeError: __aenter__
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/discord/app_commands/tree.py", line 1248, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/discord/app_commands/commands.py", line 853, in _invoke_with_namespace
+    return await self._do_call(interaction, transformed_values)
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/discord/app_commands/commands.py", line 846, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'register' raised an exception: AttributeError: __aenter__
+WARNING    - 2023-10-07 00:15:04,212 - client          : PyNaCl is not installed, voice will NOT be supported
+INFO       - 2023-10-07 00:15:04,213 - client          : logging in using static token
+INFO       - 2023-10-07 00:15:05,766 - gateway         : Shard ID None has connected to Gateway (Session ID: 56bab4706834f0d6f5cd39638cf39fae).
+WARNING    - 2023-10-07 00:15:33,085 - client          : PyNaCl is not installed, voice will NOT be supported
+INFO       - 2023-10-07 00:15:33,086 - client          : logging in using static token
+WARNING    - 2023-10-07 00:16:05,096 - client          : PyNaCl is not installed, voice will NOT be supported
+INFO       - 2023-10-07 00:16:05,097 - client          : logging in using static token
+INFO       - 2023-10-07 00:16:06,633 - gateway         : Shard ID None has connected to Gateway (Session ID: 05363696c78c2118a441c75b016958c1).
+ERROR      - 2023-10-07 00:16:19,178 - tree            : Ignoring exception in command 'register'
+Traceback (most recent call last):
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/requests/models.py", line 971, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 2 column 1 (char 1)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/discord/app_commands/commands.py", line 828, in _do_call
+    return await self._callback(interaction, **params)  # type: ignore
+  File "/home/loop/bot/main.py", line 51, in register
+    rating = res.json()['rating']
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/requests/models.py", line 975, in json
+    raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)
+requests.exceptions.JSONDecodeError: Expecting value: line 2 column 1 (char 1)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/discord/app_commands/tree.py", line 1248, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/discord/app_commands/commands.py", line 853, in _invoke_with_namespace
+    return await self._do_call(interaction, transformed_values)
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/discord/app_commands/commands.py", line 846, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'register' raised an exception: JSONDecodeError: Expecting value: line 2 column 1 (char 1)
+WARNING    - 2023-10-07 00:20:00,918 - client          : PyNaCl is not installed, voice will NOT be supported
+INFO       - 2023-10-07 00:20:00,919 - client          : logging in using static token
+INFO       - 2023-10-07 00:20:02,578 - gateway         : Shard ID None has connected to Gateway (Session ID: 3638cb0a3e9f7eaff6442a1afb6c3493).
+ERROR      - 2023-10-07 00:20:11,735 - tree            : Ignoring exception in command 'register'
+Traceback (most recent call last):
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/requests/models.py", line 971, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 2 column 1 (char 1)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/discord/app_commands/commands.py", line 828, in _do_call
+    return await self._callback(interaction, **params)  # type: ignore
+  File "/home/loop/bot/main.py", line 53, in register
+    data = res.json()
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/requests/models.py", line 975, in json
+    raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)
+requests.exceptions.JSONDecodeError: Expecting value: line 2 column 1 (char 1)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/discord/app_commands/tree.py", line 1248, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/discord/app_commands/commands.py", line 853, in _invoke_with_namespace
+    return await self._do_call(interaction, transformed_values)
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/discord/app_commands/commands.py", line 846, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'register' raised an exception: JSONDecodeError: Expecting value: line 2 column 1 (char 1)
+WARNING    - 2023-12-06 20:32:10,877 - client          : PyNaCl is not installed, voice will NOT be supported
+INFO       - 2023-12-06 20:32:10,878 - client          : logging in using static token
+INFO       - 2023-12-06 20:32:12,329 - gateway         : Shard ID None has connected to Gateway (Session ID: 7cf87d1ec82b39695b305de5b8189060).
+ERROR      - 2023-12-06 20:32:53,545 - tree            : Ignoring exception in command 'register'
+Traceback (most recent call last):
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/requests/models.py", line 971, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 2 column 1 (char 1)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/discord/app_commands/commands.py", line 828, in _do_call
+    return await self._callback(interaction, **params)  # type: ignore
+  File "/home/loop/bot/main.py", line 53, in register
+    data = res.json()
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/requests/models.py", line 975, in json
+    raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)
+requests.exceptions.JSONDecodeError: Expecting value: line 2 column 1 (char 1)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/discord/app_commands/tree.py", line 1248, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/discord/app_commands/commands.py", line 853, in _invoke_with_namespace
+    return await self._do_call(interaction, transformed_values)
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/discord/app_commands/commands.py", line 846, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'register' raised an exception: JSONDecodeError: Expecting value: line 2 column 1 (char 1)
+WARNING    - 2023-12-06 21:07:31,777 - client          : PyNaCl is not installed, voice will NOT be supported
+INFO       - 2023-12-06 21:07:31,779 - client          : logging in using static token
+INFO       - 2023-12-06 21:07:33,351 - gateway         : Shard ID None has connected to Gateway (Session ID: 99227a41061322c7b798d1b8f4b1e046).
+ERROR      - 2023-12-06 21:15:39,987 - tree            : Ignoring exception in command 'show_me'
+Traceback (most recent call last):
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/discord/app_commands/commands.py", line 828, in _do_call
+    return await self._callback(interaction, **params)  # type: ignore
+  File "/home/loop/bot/main.py", line 89, in show_me
+    async with db.create_server_connection() as conn:
+AttributeError: __aenter__
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/discord/app_commands/tree.py", line 1248, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/discord/app_commands/commands.py", line 853, in _invoke_with_namespace
+    return await self._do_call(interaction, transformed_values)
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/discord/app_commands/commands.py", line 846, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'show_me' raised an exception: AttributeError: __aenter__
+WARNING    - 2023-12-06 21:20:11,605 - client          : PyNaCl is not installed, voice will NOT be supported
+INFO       - 2023-12-06 21:20:11,607 - client          : logging in using static token
+INFO       - 2023-12-06 21:20:13,589 - gateway         : Shard ID None has connected to Gateway (Session ID: 37f7245a46014b878166065096098d06).
+WARNING    - 2023-12-06 21:46:28,405 - client          : PyNaCl is not installed, voice will NOT be supported
+INFO       - 2023-12-06 21:46:28,406 - client          : logging in using static token
+INFO       - 2023-12-06 21:46:30,302 - gateway         : Shard ID None has connected to Gateway (Session ID: ab21a73b13c48683c03a9bdcc3fd3283).
+ERROR      - 2023-12-06 21:46:43,167 - tree            : Ignoring exception in command 'show_me'
+Traceback (most recent call last):
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/discord/app_commands/commands.py", line 828, in _do_call
+    return await self._callback(interaction, **params)  # type: ignore
+  File "/home/loop/bot/main.py", line 103, in show_me
+    embed.author(
+TypeError: 'EmbedProxy' object is not callable
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/discord/app_commands/tree.py", line 1248, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/discord/app_commands/commands.py", line 853, in _invoke_with_namespace
+    return await self._do_call(interaction, transformed_values)
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/discord/app_commands/commands.py", line 842, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'show_me' raised an exception: TypeError: 'EmbedProxy' object is not callable
+WARNING    - 2023-12-06 21:47:44,531 - client          : PyNaCl is not installed, voice will NOT be supported
+INFO       - 2023-12-06 21:47:44,532 - client          : logging in using static token
+INFO       - 2023-12-06 21:47:46,376 - gateway         : Shard ID None has connected to Gateway (Session ID: 3c47c23b14fd80b913ba72ff5503aeb7).
+WARNING    - 2023-12-06 21:48:46,192 - client          : PyNaCl is not installed, voice will NOT be supported
+INFO       - 2023-12-06 21:48:46,193 - client          : logging in using static token
+INFO       - 2023-12-06 21:48:48,227 - gateway         : Shard ID None has connected to Gateway (Session ID: 29a39de6dc1a89912e03b0835d3f3e55).
+WARNING    - 2023-12-06 21:52:18,636 - client          : PyNaCl is not installed, voice will NOT be supported
+INFO       - 2023-12-06 21:52:18,637 - client          : logging in using static token
+INFO       - 2023-12-06 21:52:20,434 - gateway         : Shard ID None has connected to Gateway (Session ID: fd3f05444d565db14d725a886eeec4bd).
+INFO       - 2023-12-06 23:02:43,169 - gateway         : Shard ID None has successfully RESUMED session fd3f05444d565db14d725a886eeec4bd.
+WARNING    - 2023-12-12 14:37:17,684 - client          : PyNaCl is not installed, voice will NOT be supported
+INFO       - 2023-12-12 14:37:17,686 - client          : logging in using static token
+INFO       - 2023-12-12 14:37:19,085 - gateway         : Shard ID None has connected to Gateway (Session ID: 44a435fa1d4fe3f76dd6b26162527910).
+WARNING    - 2023-12-12 14:58:25,743 - client          : PyNaCl is not installed, voice will NOT be supported
+INFO       - 2023-12-12 14:58:25,744 - client          : logging in using static token
+INFO       - 2023-12-12 14:58:27,223 - gateway         : Shard ID None has connected to Gateway (Session ID: 3f6301d193879eb60fa335969b068799).
+WARNING    - 2023-12-12 14:59:42,834 - client          : PyNaCl is not installed, voice will NOT be supported
+INFO       - 2023-12-12 14:59:42,836 - client          : logging in using static token
+INFO       - 2023-12-12 14:59:44,584 - gateway         : Shard ID None has connected to Gateway (Session ID: 16857204fb83e780a8b41f6e9cfef8df).
+ERROR      - 2023-12-12 14:59:55,365 - tree            : Ignoring exception in command 'show_me'
+Traceback (most recent call last):
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/discord/app_commands/commands.py", line 828, in _do_call
+    return await self._callback(interaction, **params)  # type: ignore
+  File "/home/loop/bot/main.py", line 113, in show_me
+    await interaction.response.send_message(
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/discord/interactions.py", line 774, in send_message
+    raise InteractionResponded(self._parent)
+discord.errors.InteractionResponded: This interaction has already been responded to before
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/discord/app_commands/tree.py", line 1248, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/discord/app_commands/commands.py", line 853, in _invoke_with_namespace
+    return await self._do_call(interaction, transformed_values)
+  File "/home/loop/bot/.venv/lib/python3.10/site-packages/discord/app_commands/commands.py", line 846, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'show_me' raised an exception: InteractionResponded: This interaction has already been responded to before
